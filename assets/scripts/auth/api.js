@@ -1,31 +1,50 @@
 const config = require('../config')
+const store = require('../store')
 
-const onSignUp = function (formData) {
+
+
+const signUp = function (formData) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
     data: formData
-  })
+})
 }
 
-const onSignIn = function (formData) {
+
+const signIn = function(formData) {
   return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/sign-in',
-    data: formData
+  method: 'POST',
+  url: config.apiUrl + '/sign-in',
+  data: formData
   })
 }
 
-const onSignOut = function (formData) {
+const signOut = function () {
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/sign-out',
-    data: formData
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
-module.export = {
-  onSignUp,
-  onSignIn,
-  onSignOut
+const startGame = function(data){
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+
+module.exports = {
+  signUp,
+  signIn,
+  signOut,
+  startGame
 }

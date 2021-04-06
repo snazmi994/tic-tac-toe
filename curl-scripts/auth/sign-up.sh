@@ -1,6 +1,6 @@
-# VARIABLE=VALUE sh curl-scripts/auth/sign-in.sh
+# VARIABLE=VALUE sh curl-scripts/auth/sign-up.sh
 
-curl "https://tic-tac-toe-api-production.herokuapp.com/sign-in" \
+curl "https://tic-tac-toe-api-production.herokuapp.com/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
@@ -11,5 +11,4 @@ curl "https://tic-tac-toe-api-production.herokuapp.com/sign-in" \
       "password_confirmation": "'"${PASSWORD}"'"
     }
 }'
-
 echo

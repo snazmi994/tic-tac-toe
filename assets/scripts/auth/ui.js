@@ -1,41 +1,55 @@
+
 'use strict'
 const store = require('../store')
 
-const signUpSuccess = function (data) {
-  console.log('sign up success ran with the data: ', data)
-  $('form').trigger('reset')
+const onSignUpSuccess = function () {
+  $('#message').text('Signed Up Successfully')
+  $('#sign-up').trigger('reset')
+  $('#sign-up').hide()
+
 }
 
-const signUpFailure = function (data) {
-  console.log('sign up failure ran with the data: ', data)
+const onSignUpFailure = function () {
+  $('#message').text('Sign up failed')
 }
 
-const signInSuccess = function (data) {
-  console.log('sign in success ran with the data: ', data)
-  store.user = data.user
+const onSignInSuccess = function (response) {
+  store.user = response.user
+  $('#message').text(response.user.email + ' signed in successfully')
+  $('#sign-in').trigger('reset')
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 }
 
-const signInFailure = function (data) {
-  console.log('sign in failure ran with the data: ', data)
+const onSignInFailure = function () {
+  $('#message').text('Sign in failed')
 }
 
-
-
-const signOutSuccess = function () {
-  console.log('sign out successful!')
-  $('form').trigger('reset')
+const onSignOutSuccess = function () {
+  $('#message').text('You Signed Out!')
+  $('#sign-out').hide()
+  $('#start-game').hide()
+$('#sign-in').show()
   store.user = null
 }
 
-const signOutFailure = function () {
-  console.log('sign out failed!')
+const onStartGameSuccess = function () {
+  $('#message').text('Start Game!')
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 }
 
+const onStartGameFailure = function () {
+    $('#message').text('No Pass!')
+}
+
+
 module.exports = {
-  signUpSuccess,
-  signUpFailure,
-  signInFailure,
-  signInSuccess,
-  signOutSuccess,
-  signOutFailure
+  onSignUpSuccess,
+  onSignUpFailure,
+  onSignInSuccess,
+  onSignInFailure,
+  onSignOutSuccess,
+  onStartGameSuccess,
+  onStartGameFailure
 }
