@@ -13,13 +13,14 @@ border-radius: 25px;
   background: #A47D0E;
 
 }
-.log{
 
-    background-position: 50% 50%;
-    border-radius: 25px;
-    background: #32412B
+.start {
+  border-radius: 25px;
+    padding: 15px;
 
+    background: #A47D0E;
 
+}
 
 
 h1 {
@@ -28,6 +29,8 @@ h1 {
   font-size: 60px;
 
 }
+
+
 
 h2 {
   font-size: 22px;
@@ -73,13 +76,13 @@ button {
   border-left: none;
 }
 
-#block_6,
-#block_7,
-#block_8 {
+#box_6,
+#box_7,
+#box_8 {
   border-bottom: none;
 }
-#block_2,
-#block_5,
-#block_8 {
+#box_2,
+#box5,
+#box_8 {
   border-right: none;
 }

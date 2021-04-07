@@ -26,11 +26,12 @@ const onSignInFailure = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('#message').text('You Signed Out!')
+  $('#message').text('I Get It.')
   $('#sign-out').hide()
 $('#sign-in').show()
   store.user = null
 }
+
 
 
 
