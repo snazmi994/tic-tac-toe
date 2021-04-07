@@ -74,6 +74,13 @@ button {
   border: 3px solid black;
   border-top: none;
   border-left: none;
+  color:#A47D0E;
+}
+
+.block:hover {
+    background: #953553;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 
 #box_6,
@@ -81,8 +88,9 @@ button {
 #box_8 {
   border-bottom: none;
 }
+
 #box_2,
-#box5,
+#box_5,
 #box_8 {
   border-right: none;
 }

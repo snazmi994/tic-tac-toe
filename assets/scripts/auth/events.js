@@ -30,9 +30,21 @@ const onSignOut = function () {
 
 
 
+const onCreateGame = function(event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.createGame(data)
+    .then(ui.onCreateGameuccess)
+    .catch(ui.onCreateGameFailure)
+}
+
+
+
 
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut
+  onCreateGame,
+  onSignOut,
 }
