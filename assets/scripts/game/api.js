@@ -9,6 +9,9 @@ const createGame = function(data){
   })
 }
 
+
+
 module.exports = {
-  createGame
+  createGame,
+
 }

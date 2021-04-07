@@ -1,1 +1,75 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #0a6a56;
+  font-family: garmond;
+  text-align: center;
+}
+.container {
+  border-radius: 25px;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+
+}
+
+h1 {
+  color: #953553;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 19px;
+  font-style: italic;
+}
+h3{
+  color: #953553;
+}
+
+header {
+  position:center;
+      top: 20px;
+      right: 10px;
+      border-radius: 25px
+    }
+
+input {
+  background-color: #0a6a56;
+
+}
+button {
+  background-color: #0a6a56;
+
+}
+
+
+.game {
+  display: grid;
+  width: 100px;
+  height: 100px;
+  grid-template-columns: auto auto auto;
+}
+.block {
+
+  width: 80px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  font-weight: bold;
+  border: 3px solid black;
+  border-top: none;
+  border-left: none;
+}
+
+#block_6,
+#block_7,
+#block_8 {
+  border-bottom: none;
+}
+#block_2,
+#block_5,
+#block_8 {
+  border-right: none;
+}

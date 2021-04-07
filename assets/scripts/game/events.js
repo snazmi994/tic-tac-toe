@@ -1,7 +1,6 @@
 'use strict'
 
-// const getFormFields = require('./../../../lib/get-form-fields.js')
-// const api = require('./api')
+/)
 const ui = require('./ui')
 const api = require('./api')
 const store = require('./../store.js')
@@ -19,7 +18,9 @@ const onCreateGame = function(event) {
 }
 
 
-module.exports = {
 
-  onCreateGame
+
+module.exports = {
+onCreateGame,
+
 }

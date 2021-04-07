@@ -4,7 +4,9 @@ const store = require('./../store.js')
 
 
 const onCreateGameSuccess = function () {
-  $('#message').text('Start Game!')
+  $('#new-message').text('Start Game!')
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 
 }
 
@@ -17,5 +19,7 @@ const onCreateGameFailure = function () {
 module.exports = {
   createGameSuccessful,
   createGameFailure,
+
+
 
 }
