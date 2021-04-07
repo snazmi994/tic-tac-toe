@@ -30,21 +30,10 @@ const signOut = function () {
   })
 }
 
-const startGame = function(data){
-  return $.ajax({
-    method: 'PATCH',
-    url: config.apiUrl + '/games',
-    data: data,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
 
 
 module.exports = {
   signUp,
   signIn,
-  signOut,
-  startGame
+  signOut
 }

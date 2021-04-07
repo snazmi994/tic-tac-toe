@@ -28,20 +28,10 @@ const onSignInFailure = function () {
 const onSignOutSuccess = function () {
   $('#message').text('You Signed Out!')
   $('#sign-out').hide()
-  $('#start-game').hide()
 $('#sign-in').show()
   store.user = null
 }
 
-const onStartGameSuccess = function () {
-  $('#message').text('Start Game!')
-  $('#sign-up').hide()
-  $('#sign-in').hide()
-}
-
-const onStartGameFailure = function () {
-    $('#message').text('No Pass!')
-}
 
 
 module.exports = {
@@ -49,7 +39,6 @@ module.exports = {
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
-  onSignOutSuccess,
-  onStartGameSuccess,
-  onStartGameFailure
+  onSignOutSuccess
+
 }

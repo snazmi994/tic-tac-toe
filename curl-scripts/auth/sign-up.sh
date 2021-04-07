@@ -1,5 +1,4 @@
 # VARIABLE=VALUE sh curl-scripts/auth/sign-up.sh
-
 curl "https://tic-tac-toe-api-production.herokuapp.com/sign-up" \
   --include \
   --request POST \
@@ -7,8 +6,7 @@ curl "https://tic-tac-toe-api-production.herokuapp.com/sign-up" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'",
-      "password_confirmation": "'"${PASSWORD}"'"
+      "password": "'"${PASSWORD}"'"
     }
-}'
+  }'
 echo

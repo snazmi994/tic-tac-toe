@@ -6,8 +6,8 @@ const ui = require('./ui')
 const onSignUp = function (event) {
   event.preventDefault()
 const form = event.target
-const data = getFormFields(form)
-api.signUp(data)
+const formData = getFormFields(form)
+api.signUp(formData)
    .then(ui.onSignUpSuccess)
    .catch(ui.onSignUpFailure)
 }
@@ -28,19 +28,11 @@ const onSignOut = function () {
     .catch(ui.onSignOutFailure)
 }
 
-const onStartGame = function(event) {
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.startGame(data)
-    .then(ui.onStartGameSuccess)
-    .catch(ui.onStartGameFailure)
-}
+
 
 
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut,
-  onStartGame
+  onSignOut
 }
