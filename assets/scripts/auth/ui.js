@@ -6,7 +6,6 @@ const onSignUpSuccess = function () {
   $('#message').text('Signed Up Successfully')
   $('#sign-up').trigger('reset')
   $('#sign-up').hide()
-
 }
 
 const onSignUpFailure = function () {
@@ -31,16 +30,14 @@ const onSignOutSuccess = function () {
 $('#sign-in').show()
   store.user = null
 }
-const onCreateGameSuccess = function () {
-  $('#new-message').text('Start Game!')
-  store.game = data.game
 
+const onCreateGameSuccess = function () {
+  $('#message').text('Game Started!')
 }
 
 const onCreateGameFailure = function () {
-    $('#message').text('No Pass!')
+  $('#message').text('Load Error')
 }
-
 
 
 module.exports = {
@@ -49,6 +46,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onCreateGameFailure,
-onCreateGameSuccess
+  onCreateGameSuccess,
+  onCreateGameFailure
+
 }

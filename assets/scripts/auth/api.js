@@ -1,22 +1,19 @@
 const config = require('../config')
 const store = require('../store')
 
-
-
 const signUp = function (formData) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
     data: formData
-})
+  })
 }
 
-
-const signIn = function(formData) {
+const signIn = function (formData) {
   return $.ajax({
-  method: 'POST',
-  url: config.apiUrl + '/sign-in',
-  data: formData
+    method: 'POST',
+    url: config.apiUrl + '/sign-in',
+    data: formData
   })
 }
 
@@ -30,23 +27,17 @@ const signOut = function () {
   })
 }
 
-const createGame = function(data){
+const createGame = function () {
   return $.ajax({
-    url: config.apiUrl + '/games',
-    data: formData,
     method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+    url: config.apiUrl + '/games'
   })
 }
-
-
-
 
 module.exports = {
   signUp,
   signIn,
   signOut,
   createGame
+
 }
