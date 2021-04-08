@@ -5,5 +5,14 @@ curl "https://tic-tac-toe-api.herokuapp.com/games/${ID}" \
 --request PATCH \
 --header "Authorization: Bearer = ${TOKEN}" \
 --header "Content-type: application/json" \
+--data {
+  "game": {
+    "block": {
+      "index": 0,
+      "value": "x"
+    },
+    "over": false
+  }
+}
 
 echo

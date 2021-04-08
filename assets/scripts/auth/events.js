@@ -35,10 +35,9 @@ const onCreateGame = function (event) {
 }
 
 
-const onBlockClick = function () {
+const onGameBoard = function () {
   event.preventDefault()
-  console.log('click')
-  api.blockClick()
+console.log('celly clicked')
 }
 
 
@@ -47,5 +46,6 @@ module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onCreateGame
+  onCreateGame,
+  onGameBoard
 }

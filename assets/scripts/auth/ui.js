@@ -45,6 +45,7 @@ const onCreateGameFailure = function () {
   $('#message').text('Load Error')
 }
 
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -52,7 +53,6 @@ module.exports = {
   onSignInFailure,
   onSignOutSuccess,
   onCreateGameSuccess,
-  onCreateGameFailure
-
+  onCreateGameFailure,
 
 }
