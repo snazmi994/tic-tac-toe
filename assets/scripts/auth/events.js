@@ -30,9 +30,18 @@ const onSignOut = function (event) {
 const onCreateGame = function (event) {
   event.preventDefault()
   api.createGame()
-  .then(ui.onCreateGame)
+  .then(ui.onCreateGameSuccess)
   .catch(ui.onCreateGameFailure)
 }
+
+
+const onBlockClick = function () {
+  event.preventDefault()
+  console.log('click')
+  api.blockClick()
+}
+
+
 
 module.exports = {
   onSignUp,

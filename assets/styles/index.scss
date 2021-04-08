@@ -5,14 +5,14 @@ body {
   font-family: garmond;
   text-align: center;
 }
-.container {
-border-radius: 25px;
-  padding: 15px;
-  width: 300px;
-  height: 300px;
-  background: #A47D0E;
+//.container {
+//border-radius: 25px;
+//  padding: 15px;
+//  width: 300px;
+//  height: 300px;
+//background: #A47D0E;
 
-}
+//}
 
 .start {
   border-radius: 25px;
@@ -45,4 +45,29 @@ header {
       top: 20px;
       right: 10px;
       border-radius: 25px
+    }
+
+
+    .game {
+      display: grid;
+      width: 100px;
+      height: 100px;
+      grid-template-columns: auto auto auto;
+    }
+    .block {
+
+      width: 80px;
+      height: 90px;
+
+      font-size: 70px;
+      font-weight: bold;
+      border: 3px solid black;
+
+      color:#A47D0E;
+    }
+
+    .block:hover {
+        background: #953553;
+        border: 1px solid black;
+        border-radius: 4px;
     }

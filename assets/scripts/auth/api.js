@@ -9,11 +9,11 @@ const signUp = function (formData) {
   })
 }
 
-const signIn = function (formData) {
+const signIn = function (data) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
-    data: formData
+    data: data
   })
 }
 
@@ -30,9 +30,14 @@ const signOut = function () {
 const createGame = function () {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/games'
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
+
+
 
 module.exports = {
   signUp,
