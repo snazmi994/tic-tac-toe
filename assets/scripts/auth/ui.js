@@ -45,13 +45,10 @@ const onCreateGameFailure = function () {
   $('#message').text('Load Error')
 }
 
-const onGameBoardSuccess = function () {
-  $('#message').text('clicked')
+const onBlockClickSuccess = function () {
+  $('#message').text('Player X Turn')
 }
 
-const onGameBoardFailure = function () {
-  $('#message').text('cell not clicked')
-}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -60,7 +57,6 @@ module.exports = {
   onSignOutSuccess,
   onCreateGameSuccess,
   onCreateGameFailure,
-  onGameBoardSuccess,
-  onGameBoardFailure
+  onBlockClickSuccess
 
 }

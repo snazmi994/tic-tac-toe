@@ -37,24 +37,24 @@ const createGame = function () {
   })
 }
 
-const gameBoard = function () {
-  return $.ajax({
-    method: 'PATCH',
-    url: config.apiUrl + '/games/:id',
-    headers: {
-      Authorization: 'Bearer '
-    },
-    data: {
-      game: {
-        cell: {
-          "index": 0,
-          "value": "x"
-        },
-        over: false
-      }
-   }
-  })
-}
+// const blockClick = function () {
+//   return $.ajax({
+//     method: 'PATCH',
+//     url: config.apiUrl + '/games/:id',
+//     headers: {
+//       Authorization: 'Bearer '
+//     },
+//     data: {
+//       game: {
+//         cell: {
+//           index: 0,
+//           "value": "x"
+//         },
+//         over: false
+//       }
+//    }
+//   })
+// }
 
 
 module.exports = {
@@ -62,6 +62,5 @@ module.exports = {
   signIn,
   signOut,
   createGame,
-  gameBoard
 
 }

@@ -35,12 +35,9 @@ const onCreateGame = function (event) {
 }
 
 
-const onGameBoard = function () {
-  event.preventDefault()
+const onBlockClick = function () {
 console.log('celly clicked')
-api.gameBoard()
-.then(ui.onGameBoardSuccess)
-.catch(ui.onGameBoardFailure)
+ui.onBlockClickSuccess()
 }
 
 
@@ -50,5 +47,5 @@ module.exports = {
   onSignIn,
   onSignOut,
   onCreateGame,
-  onGameBoard
+  onBlockClick
 }
