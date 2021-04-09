@@ -47,27 +47,30 @@ header {
       border-radius: 25px
     }
 
+    #game-board {
+    background-color: #0a6a56;
+    margin: 50px;
+    padding: 50px;
+    border-radius: 25px;
+    width: 300px;
+    height: 300px;
+    }
 
     .game {
-      display: grid;
-      width: 100px;
-      height: 100px;
-      grid-template-columns: auto auto auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 15px;
     }
+
     .block {
-
-      width: 80px;
-      height: 90px;
-
-      font-size: 70px;
-      font-weight: bold;
-      border: 3px solid black;
-
-      color:#A47D0E;
+    height: 100px;
+    width: 100px;
+    background: #A47D0E;
     }
 
-    .block:hover {
-        background: #953553;
-        border: 1px solid black;
-        border-radius: 4px;
-    }
+      .block:hover {
+            background: #953553;
+            border: 1px solid black;
+            border-radius: 4px;
+        }

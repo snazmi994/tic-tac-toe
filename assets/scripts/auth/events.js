@@ -38,6 +38,9 @@ const onCreateGame = function (event) {
 const onGameBoard = function () {
   event.preventDefault()
 console.log('celly clicked')
+api.gameBoard()
+.then(ui.onGameBoardSuccess)
+.catch(ui.onGameBoardFailure)
 }
 
 
