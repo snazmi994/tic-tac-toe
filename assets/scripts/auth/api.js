@@ -32,15 +32,31 @@ const createGame = function () {
     method: 'POST',
     url: config.apiUrl + '/games',
     headers: {
-        Authorization: 'Bearer ' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: ''
+  })
+}
+
+const blockClick = function (board, player) {
+    return $.ajax({
+      method: 'PATCH',
+      url: config.apiUrl + '/games/' + 'id',
+      headers: {
+        Authorization: 'Bearer' + store.user.token
       },
-      data: ''
+      data: {
+      'game': {
+          'cell': {
+            'index': board,
+            'value': player
+          }
+        }
+      }
+
     })
   }
 
-const blockClick = function (event) {
-  console.log('selected')
-}
 
 
 
