@@ -63,13 +63,13 @@ header {
     grid-gap: 15px;
     }
 
-    .block {
-    height: 100px;
-    width: 100px;
+    .cell {
+    height: 150px;
+    width: 150px;
     background: #A47D0E;
     }
 
-      .block:hover {
+      .cell:hover {
             background: #953553;
             border: 1px solid black;
             border-radius: 4px;

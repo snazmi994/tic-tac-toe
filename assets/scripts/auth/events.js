@@ -32,15 +32,24 @@ const onCreateGame = function (event) {
   api.createGame()
   .then(ui.onCreateGameSuccess)
   .catch(ui.onCreateGameFailure)
+  if ($._data($('.cell')[0], 'events') === undefined) {
+   $('.cell').on('click', onMove)
+ }
 }
 
-
-const onBlockClick = function () {
+let currentMove = 'x'
+const onBlockClick = function (event) {
 console.log('celly clicked')
-ui.onBlockClickSuccess()
+if (currentMove === 'x') {
+      $(event.target).text('x')
+      ui.onBlockClickSuccess()
+      $('#message').text('Omg its ur turn O')
+      currentMove = 'o' } else if (currentMove === 'o') {
+      $(event.target).text('o')
+      $('#message').text('X ur Next')
+       currentMove = 'x'
 }
-
-
+}
 
 module.exports = {
   onSignUp,
