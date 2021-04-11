@@ -32,9 +32,14 @@ const createGame = function () {
     method: 'POST',
     url: config.apiUrl + '/games',
     headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
+        Authorization: 'Bearer ' + store.user.token
+      },
+      data: ''
+    })
+  }
+
+const blockClick = function (event) {
+  console.log('selected')
 }
 
 
@@ -43,6 +48,7 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  createGame
+  createGame,
+  blockClick
 
 }

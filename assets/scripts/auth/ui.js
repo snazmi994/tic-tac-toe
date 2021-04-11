@@ -38,15 +38,15 @@ const onSignOutSuccess = function () {
 const onCreateGameSuccess = function () {
   $('#message').text('Game Started!')
    $('#game-board').show()
-   store.game = response.game
+
 }
 
 const onCreateGameFailure = function () {
   $('#message').text('Load Error')
 }
 
-const onBlockClickSuccess = function (response) {
-
+const onBlockClick = function () {
+  console.log('also working')
 }
 
 module.exports = {
@@ -57,6 +57,6 @@ module.exports = {
   onSignOutSuccess,
   onCreateGameSuccess,
   onCreateGameFailure,
-  onBlockClickSuccess
+  onBlockClick
 
 }
