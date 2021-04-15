@@ -1,6 +1,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
+
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -30,25 +32,32 @@ const onSignOut = function (event) {
 const onCreateGame = function (event) {
   event.preventDefault()
   api.createGame()
-  .then(ui.onCreateGameSuccess)
-  .catch(ui.onCreateGameFailure)
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.onCreateGameFailure)
 console.log('data')
 }
 
-let currentMove = 'x'
+// let currentMoveEmpty = ('')
+let playerx = 'x'
 const onBlockClick = function (event) {
-console.log('celly clicked')
-if (currentMove === 'x') {
-      $(event.target).text('x')
-      $('#message').text('Omg its ur turn O')
-    currentMove = 'o' } else if (currentMove === 'o') {
-      $(event.target).text('o')
-      $('#message').text('X ur Next')
-    currentMove = 'x'
-    api.blockClick()
-    ui.onBlockClick()
+  console.log('celly clicked')
+  const cellIndex = $(event.target).data('cell-index')
+  console.log('this is the cell index that was clicked', cellIndex)
+  if (playerx === 'x') {
+    $(event.target).text('x')
+    $('#message').text('Omg its ur turn O')
+    playerx = 'o'
+  } else if (playerx === 'o') {
+    $(event.target).text('o')
+    $('#message').text('X ur Next')
+    playerx = 'x'
+  }
+  api.blockClick(cellIndex, playerx)
+    .then(ui.onBlockClickSuccess)
+    .catch(ui.onBlockClickFailure)
 }
-}
+
+
 
 module.exports = {
   onSignUp,

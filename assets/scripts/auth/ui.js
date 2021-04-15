@@ -1,4 +1,3 @@
-
 'use strict'
 const store = require('../store')
 
@@ -35,18 +34,23 @@ const onSignOutSuccess = function () {
 }
 
 
-const onCreateGameSuccess = function () {
+const onCreateGameSuccess = function (response) {
+  store.game = response.game
+  console.log('store.game', store.game)
   $('#message').text('Game Started!')
-   $('#game-board').show()
-
+  $('#game-board').show()
 }
 
 const onCreateGameFailure = function () {
   $('#message').text('Load Error')
 }
 
-const onBlockClick = function () {
+const onBlockClickSuccess = function () {
   console.log('also working')
+}
+
+const onBlockClickFailure = function () {
+  console.log('failed')
 }
 
 module.exports = {
@@ -57,6 +61,6 @@ module.exports = {
   onSignOutSuccess,
   onCreateGameSuccess,
   onCreateGameFailure,
-  onBlockClick
-
+  onBlockClickSuccess,
+  onBlockClickFailure
 }

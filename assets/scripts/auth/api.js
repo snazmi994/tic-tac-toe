@@ -1,3 +1,4 @@
+
 const config = require('../config')
 const store = require('../store')
 
@@ -38,24 +39,25 @@ const createGame = function () {
   })
 }
 
-const blockClick = function (board, player) {
-    return $.ajax({
-      method: 'PATCH',
-      url: config.apiUrl + '/games/' + 'id',
-      headers: {
-        Authorization: 'Bearer' + store.user.token
-      },
-      data: {
-      'game': {
-          'cell': {
-            'index': board,
-            'value': player
-          }
-        }
+const blockClick = function (gameIndex, currentMove) {
+  console.log(store.game)
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: gameIndex,
+          value: currentMove
+        },
+        over: false
       }
-
-    })
-  }
+    }
+  })
+}
 
 
 
@@ -65,6 +67,5 @@ module.exports = {
   signIn,
   signOut,
   createGame,
-  blockClick
-
+blockClick
 }
