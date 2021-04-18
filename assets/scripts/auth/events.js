@@ -11,6 +11,7 @@ const onSignUp = function (event) {
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
+    alert('sorry this game sucks')
 }
 
 const onSignIn = function (event) {
@@ -43,22 +44,18 @@ const onBlockClick = function (event) {
   const cellIndex = $(event.target).data('cell-index')
   // store.game.cells = cellIndex
 console.log('this is the cell index that was clicked', cellIndex)
-  if (currentPlayer === 'x') {
+currentPlayer = currentPlayer === 'x' ? 'o' : 'x'
+if (currentPlayer === 'x') {
     $(event.target).text('x')
-    $('#message').text('Omg its ur turn O')
-    currentPlayer = 'o'
+    $('#message').text('O GOES')
   } else if (currentPlayer === 'o') {
     $(event.target).text('o')
-    $('#message').text('X ur Next')
-    currentPlayer = 'x'
+    $('#message').text('X You Are Next')
   }
   api.blockClick(cellIndex, currentPlayer)
     .then(ui.onBlockClickSuccess)
     .catch(ui.onBlockClickFailure)
   }
-
-
-
 
 module.exports = {
   onSignUp,

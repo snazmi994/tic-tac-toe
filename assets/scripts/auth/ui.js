@@ -30,6 +30,8 @@ const onSignOutSuccess = function () {
   $('#message').text('I Get It.')
   $('#create-game').hide()
   $('#sign-in').show()
+  $('#sign-in').trigger("reset")
+  $('#sign-up').show()
   store.user = null
 }
 
@@ -37,7 +39,7 @@ const onSignOutSuccess = function () {
 const onCreateGameSuccess = function (response) {
   store.game = response.game
   console.log('store.game', store.game)
-  $('#message').text('Game Started!')
+  $('#message').text('Game Started! O GOES FIRST')
   $('#game-board').show()
 }
 
@@ -46,38 +48,16 @@ const onCreateGameFailure = function () {
 }
 
 
-const onBlockClickSuccess = function (response) {
+const onBlockClickSuccess = function (response, currentPlayer) {
   store.game.cells = response.game
   console.log(store.game.cells)
-  let winner
-    if ((store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') ||
-        (store.game.cells[3] === 'x' && store.game.cells[4] === 'x' && store.game.cells[5] === 'x') ||
-        (store.game.cells[6] === 'x' && store.game.cells[7] === 'x' && store.game.cells[8] === 'x') ||
-        (store.game.cells[0] === 'x' && store.game.cells[3] === 'x' && store.game.cells[6] === 'x') ||
-        (store.game.cells[1] === 'x' && store.game.cells[4] === 'x' && store.game.cells[7] === 'x') ||
-        (store.game.cells[2] === 'x' && store.game.cells[5] === 'x' && store.game.cells[8] === 'x') ||
-        (store.game.cells[0] === 'x' && store.game.cells[4] === 'x' && store.game.cells[8] === 'x') ||
-        (store.game.cells[2] === 'x' && store.game.cells[4] === 'x' && store.game.cells[6] === 'x')) {
-      winner = 'x'
-      $('#message').text('X Wins!')
-    } else if ((store.game.cells[0] === 'o' && store.game.cells[1] === 'o' && store.game.cells[2] === 'o') ||
-        (store.game.cells[3] === 'o' && store.game.cells[4] === 'o' && store.game.cells[5] === 'o') ||
-        (store.game.cells[6] === 'o' && store.game.cells[7] === 'o' && store.game.cells[8] === 'o') ||
-        (store.game.cells[0] === 'o' && store.game.cells[3] === 'o' && store.game.cells[6] === 'o') ||
-        (store.game.cells[1] === 'o' && store.game.cells[4] === 'o' && store.game.cells[7] === 'o') ||
-        (store.game.cells[2] === 'o' && store.game.cells[5] === 'o' && store.game.cells[8] === 'o') ||
-        (store.game.cells[0] === 'o' && store.game.cells[4] === 'o' && store.game.cells[8] === 'o') ||
-        (store.game.cells[2] === 'o' && store.game.cells[4] === 'o' && store.game.cells[6] === 'o')) {
-      winner = 'o'
-      $('#message').text('Wins!')
-    } else {
-       $('#message').text('Tie Game!')
   }
-}
+
 
 const onBlockClickFailure = function () {
   console.log('failed')
 }
+
 
 module.exports = {
   onSignUpSuccess,

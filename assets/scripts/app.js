@@ -5,7 +5,7 @@ $(() => {
 
   //$('#sign-in').hide()
   $('#sign-out').hide()
-//$('#game-board').hide()
+$('#game-board').hide()
 
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
