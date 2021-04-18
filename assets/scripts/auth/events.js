@@ -37,25 +37,26 @@ const onCreateGame = function (event) {
 console.log('data')
 }
 
-// let currentMoveEmpty = ('')
-let playerx = 'x'
+
+let currentPlayer = 'x'
 const onBlockClick = function (event) {
-  console.log('celly clicked')
   const cellIndex = $(event.target).data('cell-index')
-  console.log('this is the cell index that was clicked', cellIndex)
-  if (playerx === 'x') {
+  // store.game.cells = cellIndex
+console.log('this is the cell index that was clicked', cellIndex)
+  if (currentPlayer === 'x') {
     $(event.target).text('x')
     $('#message').text('Omg its ur turn O')
-    playerx = 'o'
-  } else if (playerx === 'o') {
+    currentPlayer = 'o'
+  } else if (currentPlayer === 'o') {
     $(event.target).text('o')
     $('#message').text('X ur Next')
-    playerx = 'x'
+    currentPlayer = 'x'
   }
-  api.blockClick(cellIndex, playerx)
+  api.blockClick(cellIndex, currentPlayer)
     .then(ui.onBlockClickSuccess)
     .catch(ui.onBlockClickFailure)
-}
+  }
+
 
 
 
@@ -64,5 +65,7 @@ module.exports = {
   onSignIn,
   onSignOut,
   onCreateGame,
-  onBlockClick
+  onBlockClick,
+  // checkForWinner
+
 }

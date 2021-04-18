@@ -39,7 +39,7 @@ const createGame = function () {
   })
 }
 
-const blockClick = function (gameIndex, currentMove) {
+const blockClick = function (cellIndex, cellValue) {
   console.log(store.game)
   return $.ajax({
     method: 'PATCH',
@@ -50,8 +50,8 @@ const blockClick = function (gameIndex, currentMove) {
     data: {
       game: {
         cell: {
-          index: gameIndex,
-          value: currentMove
+          index: cellIndex,
+          value: cellValue
         },
         over: false
       }
